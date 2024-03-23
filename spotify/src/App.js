@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import NewFile from "./test.jsx";
 import LargeDiv2Text from "./components/largeDiv.jsx";
 import TopCoverImage from "./components/TopCoverimage.jsx";
 import SmallDiv from "./components/smallDiv.jsx";
@@ -7,10 +6,12 @@ import logoSpotify from "./img/spotifyLogoAndText.png";
 import Test from "./img/test.jpeg";
 import logo from "./logo.svg";
 import Details_album from "./Details_album.jsx";
+import Details_genre from "./Details_genre.jsx";
 import "./App.css";
 
 function MainPage() {
-  const album = 2;
+  const album = 8;
+  const genre = 4;
   return (
     <div className="App">
       <TopCoverImage
@@ -32,8 +33,8 @@ function MainPage() {
           Text1={"Text1 trop bien"}
           Text2={"Text 2 trop bien"}
         />
-        <Link to={`/caca`}>Go to New File</Link>
         <Link to={`/details_album/${album}`}>Details_album</Link>
+        <Link to={`/details_genre/${genre}`}>Details_genre</Link>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -52,8 +53,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/caca" element={<NewFile />} />
         <Route path="/details_album/:album" element={<Details_album />} />
+        <Route path="/details_genre/:genre" element={<Details_genre />} />
       </Routes>
     </Router>
   );
