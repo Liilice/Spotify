@@ -1,5 +1,6 @@
 import AlbumsDiv from "./components/AlbumsDiv";
 import Pagination from "./components/pagination";
+import BtnBack from "./components/btnBack"
 import { useEffect, useState } from 'react';
 
 function ListingAlbums(){
@@ -24,6 +25,7 @@ function ListingAlbums(){
 
         fetchData();
     }, []);
+
     const indexOfLastRecord = currentPage * recordsPerPage;
     const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
     const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
@@ -35,7 +37,10 @@ function ListingAlbums(){
             width: '100%',
             minHeight: '100vh',
         }}>
-            <h1>List Albums</h1>
+            <div style={{display:'flex', justifyContent:'space-between', padding:'5vh'}}>
+            <BtnBack url='/'/>
+            <h1 style={{fontSize:'75px', marginRight:'5vh'}}>List Albums</h1>
+            </div>
             <div style={{display:'flex', flexWrap:'wrap'}}>
             {currentRecords.map(album => (
                 <AlbumsDiv info={album}/>

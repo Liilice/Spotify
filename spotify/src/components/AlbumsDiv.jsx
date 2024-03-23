@@ -1,5 +1,4 @@
 const AlbumsDiv = ({ info }) => {
-    console.log(info)
     return (
         <a href={"/details_album/"+ info.id}>
             <div style={{
