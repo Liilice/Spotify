@@ -11,7 +11,6 @@ import  LogoSportify from "./img/spotifyLogoAndText.png";
 import "./App.css";
 
 function Homepage() {
-    const albumm = 2;
     const [data, setData] = useState([]);
 
     useEffect(() => {
