@@ -5,8 +5,6 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
         pageNumbers.push(i);
     }
 
-
-
     const goToNextPage = () => {
         if (currentPage !== nPages) setCurrentPage(currentPage + 1)
     }

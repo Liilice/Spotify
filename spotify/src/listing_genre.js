@@ -1,12 +1,9 @@
 import GenreDiv from "./components/genreDiv";
-import Pagination from "./components/pagination";
+import BtnBack from "./components/btnBack"
 import { useEffect, useState } from 'react';
 
 function ListingGenre(){
     const [data, setData] = useState([])
-
-    const [currentPage, setCurrentPage] = useState(1);
-    const [recordsPerPage] = useState(6);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,29 +13,22 @@ function ListingGenre(){
         };
         fetchData();
     }, []);
-
-    const indexOfLastRecord = currentPage * recordsPerPage;
-    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-    const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
-    const nPages = Math.ceil(data.length / recordsPerPage)
     
     return (
         <div style={{
             backgroundColor: '#282828',
             width: '100%',
-            minHeight: '100vh',
+            minHeight: '100vh'
         }}>
-            <h1>List Albums</h1>
-            <div>
-            {currentRecords.map(album => (
-                <GenreDiv info={album}/>
+            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', padding:'5vh'}}>
+            <BtnBack url='/'/>
+            <h1 style={{fontSize:'75px', marginRight:'5vh'}}>List Genre</h1>
+            </div>
+            <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
+            {data.map(genre => (
+                <GenreDiv info={genre}/>
             ))}
             </div>
-            <Pagination
-                nPages={nPages}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-            />
         </div>
     )
 }

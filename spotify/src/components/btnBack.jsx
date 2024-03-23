@@ -1,5 +1,4 @@
 function BtnBack(url) {
-  console.log(url)
   return (
     <a href={url.url}>
       <div style={{

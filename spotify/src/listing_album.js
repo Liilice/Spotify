@@ -37,11 +37,11 @@ function ListingAlbums(){
             width: '100%',
             minHeight: '100vh',
         }}>
-            <div style={{display:'flex', justifyContent:'space-between', padding:'5vh'}}>
+            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', padding:'5vh'}}>
             <BtnBack url='/'/>
             <h1 style={{fontSize:'75px', marginRight:'5vh'}}>List Albums</h1>
             </div>
-            <div style={{display:'flex', flexWrap:'wrap'}}>
+            <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
             {currentRecords.map(album => (
                 <AlbumsDiv info={album}/>
             ))}
