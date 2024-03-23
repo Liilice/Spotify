@@ -14,8 +14,8 @@ function LargeDiv2Text(props) {
             justifyContent: 'center',
             alignItems: 'center'
         }}>
-            <h1 style={{color: props.textColor1, fontSize: '2.5rem' ,position: 'relative', top: '-2vh', left: '-15vh'}}>Text 1</h1>
-            <h1 style={{color: props.textColor2, fontSize: '2rem' ,position: 'relative', top: '-7vh', left: '-12vh'}}>Text 2</h1>
+            <h1 style={{color: props.textColor1, fontSize: '2.5rem' ,position: 'relative', top: '-2vh', left: '-15vh'}}>{props.Text1}</h1>
+            <h1 style={{color: props.textColor2, fontSize: '2rem' ,position: 'relative', top: '-7vh', left: '-12vh'}}>{props.Text2}</h1>
         </div>
     );
 }
