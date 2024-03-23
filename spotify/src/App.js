@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import NewFile from "./test.jsx";
+import LargeDiv2Text from "./components/largeDiv.jsx";
+import logoSpotify from "./img/spotifyLogoAndText.png";
+import Test from "./img/test.jpeg";
 import logo from './logo.svg';
 import './App.css';
 
@@ -11,6 +14,7 @@ function MainPage() {
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
+                <LargeDiv2Text backgroundImage={Test} textColor1={"white"} textColor2={"gray"} />
                 <Link to={`/caca`}>Go to New File</Link>
                 <a
                     className="App-link"
