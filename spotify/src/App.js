@@ -4,6 +4,7 @@ import LargeDiv2Text from "./components/largeDiv.jsx";
 import Details_album from "./Details_album.jsx";
 import ListingAlbums from "./listing_album.js";
 import ListingGenre from "./listing_genre.js";
+import ListingArtists from "./listing_artist.js";
 import "./App.css";
 
 function Homepage() {
@@ -45,7 +46,8 @@ function Homepage() {
                 <h1>Homepage</h1>
                 <Link to={`/details_album/${albumm}`}>Details_album</Link>
                 <Link to={`/listing_album`}>Listing_album</Link>
-                <Link to={`/Listing_genre`}>Listing_genre</Link>
+                <Link to={`/listing_genre`}>Listing_genre</Link>
+                <Link to={`/listing_artists`}>Listing_artist</Link>
             </nav>
             {data.map(item => (
                 <LargeDiv2Text
@@ -73,7 +75,8 @@ function App() {
                 <Route path="/" element={<Homepage />} />
                 <Route path="/listing_album" element={<ListingAlbums />} />
                 <Route path="/details_album/:album" element={<Details_album />} />
-                <Route path="/Listing_genre" element={<ListingGenre />} />
+                <Route path="/listing_genre" element={<ListingGenre />} />
+                <Route path="/listing_artists" element={<ListingArtists />} />
             </Routes>
         </Router>
     );
