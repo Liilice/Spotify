@@ -15,7 +15,7 @@ function LargeDiv2Text(props) {
             alignItems: 'center',
             margin: '1vh'
         }}>
-            <h1 style={{color: props.textColor1, fontSize: '2.5rem' ,position: 'relative', top: '-2vh', paddingTop: '2vh', paddingLeft: '2vh'}}>{props.Text1}</h1>
+            <h1 style={{color: props.textColor1, fontSize: '2rem' ,position: 'relative', top: '-2vh', paddingTop: '2vh', paddingLeft: '2vh'}}>{props.Text1}</h1>
             <h1 style={{color: props.textColor2, fontSize: '2rem' ,position: 'relative', top: '-7vh', padding: '1vh'}}>{props.Text2}</h1>
         </div>
     );
