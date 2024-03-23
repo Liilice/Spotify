@@ -17,8 +17,8 @@ function NewFile() {
     );
 }
 
-function restInPeace() {
-    return <h1>Rest in peace</h1>;
-}
+// function restInPeace() {
+//     return <h1>Rest in peace</h1>;
+// }
 
 export default NewFile;
