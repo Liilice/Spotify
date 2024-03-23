@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import LargeDiv2Text from "./largeDiv.jsx";
+import LargeDiv2Text from "./components/largeDiv.jsx";
 import Details_album from "./Details_album.jsx";
 import ListingAlbums from "./listing_album.js";
 import "./App.css";

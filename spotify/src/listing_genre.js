@@ -1,8 +1,8 @@
-import AlbumsDiv from "./components/AlbumsDiv";
+import GenreDiv from "./components/genreDiv";
 import Pagination from "./components/pagination";
 import { useEffect, useState } from 'react';
 
-function ListingAlbums(){
+function ListingGenre(){
     const [data, setData] = useState([])
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -10,20 +10,13 @@ function ListingAlbums(){
 
     useEffect(() => {
         const fetchData = async () => {
-            const responseAlbums = await fetch('http://localhost:8000/albums');
-            const dataAlbums = await responseAlbums.json();
-
-            const result = await Promise.all(dataAlbums.map(async (album) => {
-                const responseArtist = await fetch(`http://localhost:8000/artists/${album.artist_id}`);
-                const dataArtist = await responseArtist.json();
-                return { ...album, artist: dataArtist.name };
-            }));
-
-            setData(result);
+            const responseGenre = await fetch('http://localhost:8000/genres');
+            const dataGenre = await responseGenre.json();
+            setData(dataGenre);
         };
-
         fetchData();
     }, []);
+
     const indexOfLastRecord = currentPage * recordsPerPage;
     const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
     const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
@@ -36,9 +29,9 @@ function ListingAlbums(){
             minHeight: '100vh',
         }}>
             <h1>List Albums</h1>
-            <div style={{display:'flex', flexWrap:'wrap'}}>
+            <div>
             {currentRecords.map(album => (
-                <AlbumsDiv info={album}/>
+                <GenreDiv info={album}/>
             ))}
             </div>
             <Pagination
@@ -50,4 +43,4 @@ function ListingAlbums(){
     )
 }
 
-export default ListingAlbums;
+export default ListingGenre;

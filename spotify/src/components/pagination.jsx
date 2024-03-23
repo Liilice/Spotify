@@ -14,28 +14,23 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
         if (currentPage !== 1) setCurrentPage(currentPage - 1)
     }
     return (
-        <nav>
-            <ul className='pagination'>
-                <li className="page-btn">
-                    <a className="page-link"
-                        onClick={goToPrevPage}
-                        href='#'>
+        <nav style={{display:"flex",}}>
+            <ul style={{display:"flex", flexWrap:'wrap', listStyle: 'none'}}>
+                <li style={{margin:'1.5vh'}}>
+                    <a onClick={goToPrevPage} href='#'>
                         Previous
                     </a>
                 </li>
                 {pageNumbers.map(pgNumber => (
-                    <li key={pgNumber}
-                        className={`page-btn ${currentPage == pgNumber ? 'active' : ''} `} >
+                    <li key={pgNumber} style={{margin:'1.5vh'}}>
                         <a onClick={() => setCurrentPage(pgNumber)}
-                            className='page-link'
                             href='#'>
                             {pgNumber}
                         </a>
                     </li>
                 ))}
-                <li className="page-btn">
-                    <a className="page-link"
-                        onClick={goToNextPage}
+                <li style={{margin:'1.5vh'}}>
+                    <a onClick={goToNextPage}
                         href='#'>
                         Next
                     </a>
