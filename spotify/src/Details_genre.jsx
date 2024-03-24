@@ -23,7 +23,11 @@ function Details_genre() {
           `http://localhost:8000/albums/${album}`
         );
         const dataAlbum = await responseAlbums.json();
-        albums_genre.push({ ...album, name: dataAlbum["album"].name });
+        albums_genre.push({
+          ...album,
+          name: dataAlbum["album"].name,
+          id: dataAlbum["album"].id,
+        });
       }
       setAlbums(albums_genre);
     }
@@ -58,9 +62,12 @@ function Details_genre() {
       <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        {currentRecords.map((album) => (
-          <AlbumsDiv info={album} />
-        ))}
+        {currentRecords.map(
+          (album) => (
+            <AlbumsDiv info={album} />
+          )
+          //   console.log(album)
+        )}
       </div>
       <Pagination
         nPages={nPages}
