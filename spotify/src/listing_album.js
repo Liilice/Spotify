@@ -14,11 +14,13 @@ function ListingAlbums(){
             const responseAlbums = await fetch('http://localhost:8000/albums');
             const dataAlbums = await responseAlbums.json();
 
-            const result = await Promise.all(dataAlbums.map(async (album) => {
+            let result = [];
+
+            for (let album of dataAlbums) {
                 const responseArtist = await fetch(`http://localhost:8000/artists/${album.artist_id}`);
                 const dataArtist = await responseArtist.json();
-                return { ...album, artist: dataArtist.name };
-            }));
+                result.push({ ...album, artist: dataArtist.name });
+            }
 
             setData(result);
         };
