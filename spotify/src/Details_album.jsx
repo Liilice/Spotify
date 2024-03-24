@@ -11,38 +11,22 @@ function Details_album() {
   let album_id = useParams();
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const responseAlbums = await fetch(
-            "http://localhost:8000/albums/" + album_id.album
-        );
-        if (!responseAlbums.ok) {
-          console.error('Failed to fetch album data:', responseAlbums.status, responseAlbums.statusText);
-          return;
-        }
-        const dataAlbums = await responseAlbums.json();
-        console.log('Fetched album data:', dataAlbums);
-        setAlbum_info(dataAlbums.album);
-        setAlbum_tracks(dataAlbums.tracks);
-        const responseArtist = await fetch(
-            "http://localhost:8000/artists/" + dataAlbums.album.artist_id
-        );
-        if (!responseArtist.ok) {
-          console.error('Failed to fetch artist data:', responseArtist.status, responseArtist.statusText);
-          return;
-        }
-        const dataArtist = await responseArtist.json();
-        setArtist_id(dataArtist.name);
-        setLoading(false);
-      } catch (error) {
-        console.error('An error occurred while fetching data:', error);
-      }
+      const responseAlbums = await fetch(
+        "http://localhost:8000/albums/" + album_id.album
+      );
+      const dataAlbums = await responseAlbums.json();
+      setAlbum_info(dataAlbums.album);
+      setAlbum_tracks(dataAlbums.tracks);
+      const responseArtist = await fetch(
+        "http://localhost:8000/artists/" + dataAlbums.album.artist_id
+      );
+      const dataArtist = await responseArtist.json();
+      setArtist_id(dataArtist.name);
+      setLoading(false);
     };
     fetchData();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
   return (
     <div
       style={{ backgroundColor: "#282828", width: "100%", minHeight: "100vh" }}
