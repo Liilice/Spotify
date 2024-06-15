@@ -43,7 +43,7 @@ Le site web doit être développé en utilisant React pour la partie front-end. 
 ```bash
 git clone git@github.com:Liilice/Spotify.git
 cd Spotify
-``
+```
 ### 2. Configuration de l'API 
 Installation de Docker : https://docs.docker.com/engine/install/
 Image et tutoriel pour installer l'image : https://hub.docker.com/r/matfire/spotitech
