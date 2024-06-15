@@ -45,8 +45,10 @@ git clone git@github.com:Liilice/Spotify.git
 cd Spotify
 ```
 ### 2. Configuration de l'API 
-Installation de Docker : https://docs.docker.com/engine/install/
+Installation de Docker : https://docs.docker.com/engine/install/ 
+
 Image et tutoriel pour installer l'image : https://hub.docker.com/r/matfire/spotitech
+
 Si vous avez un problème de version lors de lancement de votre docker, ajoutez platform: linux/amd64 sous le champ "image:"
 Une image Docker est fournie pour configurer l'API Spotify. En suivant les instructions du README, vous pouvez accéder à l'API à l'adresse `localhost:8000`.
 
